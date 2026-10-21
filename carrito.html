@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+ 
+<body>
+ 
+    <header>
+        <h1>Carrito</h1>
+    </header>
+ 
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="contacto.html">Contacto</a>
+        
+        
+    </nav>
+ 
+    <main>
+ 
+        <section class="inicio">
+    <h1>Carrito de los servicios</h1><br><br><br><br>
+    <div class="card">
+    <img src="img/2.jpg" width="100px" height="100px">
+    <div class="card-content">
+      <div class="card-title">Asistir personalmente al campo</div>
+      <div class="card-description">
+        $1500<br>
+        <button class="boton" onclick="agregarAlCarrito('Asistir personalmente al campo')">Agregar al carrito</button>
+      </div>
+       </div>
+        </div>
+           <br><br>
+
+    <div class="card">
+    <img src="img/3.jpg" width="100px" height="100px">
+    <div class="card-content">
+      <div class="card-title">Realizar una receta</div>
+      <div class="card-description">
+        $1000 <br>
+        <br>
+        <button class="boton" onclick="agregarAlCarrito('Realizar una receta')">Agregar al carrito</button>
+      </div>
+        </div>
+          </div>
+            <br><br>
+            <button class="boton" onclick="alert('Gracias por su compra')">Comprar</button>
+
+    <br><br>
+    <div class="carrito">
+      <h2>Carrito</h2>
+      <div class="contador">Servicios en el carrito: <span id="cantidad">0</span></div>
+      <ul id="listaCarrito"></ul>
+    </div>
+    <script>
+      let cantidad = 0;
+      const listaCarrito = document.getElementById("listaCarrito");
+      const cantidadSpan = document.getElementById("cantidad");
+
+      function agregarAlCarrito(producto) {
+      cantidad++;
+      cantidadSpan.textContent = cantidad;
+
+      const li = document.createElement("li");
+      li.textContent = producto;
+      listaCarrito.appendChild(li);
+    }
+    </script>
+        
+    </main>
+ 
+</body>
+ 
+</html>
+ 
